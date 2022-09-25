@@ -42,7 +42,6 @@ def calculateNeighborhoodSize(db):
         else:
             area=bottom*left
 
-        db.update_one(data, {"$set": {"bottom": str(bottom), "left": str(left), "right": str(right), "up": str(up), "area": str(area)}})
-        db.update_one(data, {"$push": {"points": points}})
+        db.update_one(data, {"$set": {"bottom": str(bottom), "left": str(left), "right": str(right), "up": str(up), "area": str(area), "points": points}})
 
 calculateNeighborhoodSize(get_database())
